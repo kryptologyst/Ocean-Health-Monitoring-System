@@ -1,0 +1,49 @@
+# Geographic Configuration
+geo:
+  # Coordinate Reference System
+  crs: "EPSG:4326"  # WGS84
+  
+  # Map Configuration
+  map:
+    center_lat: 0
+    center_lon: 0
+    zoom_level: 2
+    tiles: "OpenStreetMap"
+    
+  # Ocean Basin Definitions
+  ocean_basins:
+    pacific:
+      lon_min: -180
+      lon_max: -60
+    atlantic:
+      lon_min: -60
+      lon_max: 20
+    indian:
+      lon_min: 20
+      lon_max: 180
+
+# Visualization Configuration
+viz:
+  # Color schemes for health status
+  health_colors:
+    healthy: "#2E8B57"      # Sea Green
+    moderate_risk: "#FFD700" # Gold
+    critical: "#DC143C"      # Crimson
+  
+  # Plot Configuration
+  plots:
+    figure_size: [12, 8]
+    dpi: 300
+    style: "default"
+    
+  # Map Configuration
+  maps:
+    marker_radius: 5
+    marker_opacity: 0.7
+    popup_max_width: 300
+    
+  # Dashboard Configuration
+  dashboard:
+    height: 800
+    width: "100%"
+    theme: "plotly_white"

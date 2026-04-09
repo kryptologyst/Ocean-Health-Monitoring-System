@@ -1,0 +1,49 @@
+# Data Configuration
+data:
+  n_samples: 2000
+  n_regions: 50
+  seed: 42
+  spatial_extent:
+    lon_min: -180
+    lat_min: -90
+    lon_max: 180
+    lat_max: 90
+  temporal_range:
+    start_date: "2020-01-01"
+    end_date: "2023-12-31"
+
+# Feature Configuration
+features:
+  core_parameters:
+    - sea_surface_temperature
+    - chlorophyll_concentration
+    - ph_level
+    - dissolved_oxygen
+    - salinity
+  additional_parameters:
+    - turbidity
+    - nitrate
+    - phosphate
+  spatial_features:
+    - longitude
+    - latitude
+    - distance_from_equator
+    - ocean_basin
+  temporal_features:
+    - month
+    - season
+
+# Health Classification Thresholds
+health_thresholds:
+  critical:
+    temperature: 28.5
+    oxygen: 4.0
+    chlorophyll: 3.0
+    ph_min: 7.8
+    ph_max: 8.3
+  moderate:
+    temperature: 27.0
+    oxygen: 5.5
+    chlorophyll: 2.0
+    ph_min: 8.0
+    ph_max: 8.2

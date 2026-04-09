@@ -1,0 +1,59 @@
+# Model Configuration
+model:
+  random_state: 42
+  test_size: 0.2
+  cv_folds: 5
+  device: "auto"  # auto, cpu, cuda, mps
+
+# Neural Network Configuration
+neural_network:
+  hidden_dims: [64, 32]
+  num_classes: 3
+  dropout_rate: 0.2
+  epochs: 100
+  batch_size: 32
+  learning_rate: 0.001
+  optimizer: "adam"
+  loss_function: "cross_entropy"
+
+# Baseline Models Configuration
+baseline_models:
+  logistic_regression:
+    max_iter: 1000
+    random_state: 42
+  random_forest:
+    n_estimators: 100
+    random_state: 42
+    n_jobs: -1
+  gradient_boosting:
+    n_estimators: 100
+    random_state: 42
+  svm:
+    random_state: 42
+    probability: true
+  knn:
+    n_neighbors: 5
+    n_jobs: -1
+  xgboost:
+    random_state: 42
+    eval_metric: "mlogloss"
+
+# Evaluation Configuration
+evaluation:
+  metrics:
+    - accuracy
+    - precision
+    - recall
+    - f1_score
+    - roc_auc
+  spatial_metrics:
+    - basin_accuracy
+    - latitude_accuracy
+    - longitude_accuracy
+    - seasonal_accuracy
+  domain_metrics:
+    - critical_recall
+    - false_alarm_rate
+    - healthy_precision
+    - temp_critical_performance
+    - oxygen_critical_performance
